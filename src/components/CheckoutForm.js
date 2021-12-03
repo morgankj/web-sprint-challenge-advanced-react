@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useForm from '../hooks/useForm';
 
 const initialValue = {
   firstName: "",
@@ -12,21 +13,9 @@ const initialValue = {
 // This form should be handled by a "useForm" custom hook
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
-const useForm = (initialValue) => {
-  const [values, setValues] = useState(initialValue);
-
-  const handleChanges = event => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value
-    })
-  }
-
-  return [values, handleChanges];
-}
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(initialValue);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, handleChanges] = useForm(initialValue);
 
   const handleSubmit = (e) => {
