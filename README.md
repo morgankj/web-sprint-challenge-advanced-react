@@ -117,9 +117,16 @@ test("displays plants in cart", () => {
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. What are the main differences between a stateful and a functional component?
+- Unlike functional components, stateful components hold function (component) scoped data referred to as state. This data can be manipulated through a number of different hooks and other helpful functions. Stateful functions (declared with class syntax) can utilize a constructor function to declare state. A stateful component can render both props and state, while functional components can only render props. Stateful functions also hold a distinct syntax difference, in that their there props and state require the use of "this. " (as in "this.props.name" or "this.state.name") when referenced.
 
-2. When does a componentWillMount function be called? What about a componentWillUpdate?
+2. When is a componentWillMount function called? What about a componentWillUpdate?
+- componentWillMount is invoked immediately before mounting occurs, before the initial render()
+- componentWillUpdate is invoked every time a re-render occurs
 
 3. Define stateful logic.
+- stateful logic is logic built into a component, and includes code and functions that create or modify state 
 
 4. What are the three step of creating a successful test? What is done in each phase? 
+- Arrange: set up a webpage/form (render the component/page)
+- Act: simulate a user action on the page (find an element on the page using screen, then use userEvent to perform an action)
+- Assert: verify that the page responds correctly to the action (use expect() to check and verify behavior)
